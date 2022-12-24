@@ -1,4 +1,3 @@
-
 from typing import Optional
 
 from function import filter_query, limit_query, map_query, sort_query, unique_query
@@ -11,10 +10,12 @@ CMD_TO_FUNCTIONS = {
     'sort': sort_query,
 }
 
-def read_file(file_name: str):
-    with open(file_name) as file:
+
+def read_file(filename):
+    with open(filename) as file:
         for line in file:
             yield line
+
 
 def build_query(cmd: str, value: str, file_name: str, data: Optional[list[str]]):
     if data is None:

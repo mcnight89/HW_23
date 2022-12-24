@@ -5,7 +5,9 @@ from models import BatchRequestSchema
 
 main_bp = Blueprint('main', __name__)
 
-FILE_NAME = 'data/apache_logs.txt'
+FILE_NAME = '/home/pavel/PycharmProjects/HW_23/data/apache_logs.txt'  # 'data/apache_logs.txt'
+""" Написал абсолютный путь т.к.  на Ubuntu по другому не работало """
+
 
 @main_bp.route('/perform_query', methods=['POST'])
 def perform_query():
